@@ -3,18 +3,10 @@ def add_students_to_list(list_students):
         students_dict = {}
         name = input("Digite el nombre del estudiante a ingresar: ")
         homeroom = input("Digite la seccion del estudiante a ingresar: ")
-        spanish_grade = float(input("Digite la nota de Español del estudiante a ingresar: "))
-        if (spanish_grade < 0 or spanish_grade > 100):
-            raise ValueError ("Digite una nota del 0 al 100.")
-        english_grade = float(input("Digite la nota de Ingles del estudiante a ingresar: "))
-        if (english_grade < 0 or english_grade > 100):
-            raise ValueError ("Digite una nota del 0 al 100.")
-        social_studies_grade = float(input("Digite la nota de Estudios Sociales del estudiante a ingresar: "))
-        if (social_studies_grade < 0 or social_studies_grade > 100):
-            raise ValueError ("Digite una nota del 0 al 100.")
-        science_grade = float(input("Digite la nota de Ciencias del estudiante a ingresar: "))
-        if (science_grade < 0 or science_grade > 100):
-            raise ValueError ("Digite una nota del 0 al 100.")
+        spanish_grade = request_correct_grade(1)     
+        english_grade = request_correct_grade(2)
+        social_studies_grade = request_correct_grade(3)
+        science_grade = request_correct_grade(4)
 
         students_dict = {
             "Nombre": name,
@@ -29,6 +21,54 @@ def add_students_to_list(list_students):
         return list_students
     except ValueError as ex:
         print(ex)
+
+
+
+def validate_grade_input(grade):
+    try:
+        if (grade < 0 or grade > 100):
+            return False
+        else:
+            return True
+    except Exception as ex:
+        print(ex)
+
+
+def request_correct_grade(signature):
+    try:
+        match signature:
+            case 1:
+                while(True):
+                    grade = float(input("Digite la nota de Español del estudiante a ingresar: "))
+                    if (validate_grade_input(grade) == False):
+                        print("Digite una nota del 0 al 100.")
+                    else:
+                        break
+            case 2:
+                while(True):
+                    grade = float(input("Digite la nota de Ingles del estudiante a ingresar: "))
+                    if (validate_grade_input(grade) == False):
+                        print("Digite una nota del 0 al 100.")
+                    else:
+                        break
+            case 3:
+                while(True):
+                    grade = float(input("Digite la nota de Estudios Sociales del estudiante a ingresar: "))
+                    if (validate_grade_input(grade) == False):
+                        print("Digite una nota del 0 al 100.")
+                    else:
+                        break
+            case 4:
+                while(True):
+                    grade = float(input("Digite la nota de Ciencias del estudiante a ingresar: "))
+                    if (validate_grade_input(grade) == False):
+                        print("Digite una nota del 0 al 100.")
+                    else:
+                        break
+        return grade
+    except Exception as ex:
+        print(ex)
+
 
 
 
@@ -80,13 +120,13 @@ def calculate_avg_grade_students(list_students):
 
 
 
-def see_avg_grade_students_list(avg_grade_students_list):
+def calculate_avg_all_students(avg_grade_students_list):
     try:
-        student = {}
-        for index, student in enumerate(avg_grade_students_list):
-            student = avg_grade_students_list[index]
-            for key, values in student.items():
-                print(f"{key}: {values}")
+        avg_all_students = 0.0
+        for student in avg_grade_students_list:
+            avg_all_students += float(student["Promedio"])
+        avg_all_students = avg_all_students / len(avg_grade_students_list)
+        return avg_all_students
     except Exception as ex:
         print(ex)
 

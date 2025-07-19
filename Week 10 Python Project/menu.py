@@ -42,14 +42,12 @@ def execute_option_from_menu():
                     actions.see_students_list(top_3_students_list)
                 case 4:
                     avg_grade_students_list = actions.calculate_avg_grade_students(student_list)
-                    actions.see_avg_grade_students_list(avg_grade_students_list)
-                case 5:
-                    path = input("Digite la ruta a la cual quiere exportar los datos: ")
-                    data.export_data_student_CSV(path, student_list, student_list[0].keys())
+                    print(f"El promedio del total de todos los promedios de los alumnos es de: {actions.calculate_avg_all_students(avg_grade_students_list)}")
+                case 5:                    
+                    data.export_data_student_CSV("Estudiantes.csv", student_list, student_list[0].keys())
                     print("Datos fueron exportados.")
                 case 6:
-                    path = input("Digite la ruta de la cual quiere importar los datos: ")
-                    student_list = data.import_CSV_into_list(path)
+                    student_list = data.import_CSV_into_list("Estudiantes.csv")
                     print("Datos fueron importados.")
                 case 7:
                     print("Muchas gracias por usar nuestro sistema!")
