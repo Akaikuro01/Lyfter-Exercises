@@ -26,7 +26,9 @@ def add_students_to_list(list_students):
 
 def validate_grade_input(grade):
     try:
-        if (grade < 0 or grade > 100):
+        if(check_value_type(grade) == False):
+            return False
+        elif (float(grade) < 0 or float(grade) > 100):
             return False
         else:
             return True
@@ -39,33 +41,33 @@ def request_correct_grade(signature):
         match signature:
             case 1:
                 while(True):
-                    grade = float(input("Digite la nota de Español del estudiante a ingresar: "))
+                    grade = input("Digite la nota de Español del estudiante a ingresar: ")
                     if (validate_grade_input(grade) == False):
                         print("Digite una nota del 0 al 100.")
                     else:
                         break
             case 2:
                 while(True):
-                    grade = float(input("Digite la nota de Ingles del estudiante a ingresar: "))
+                    grade = input("Digite la nota de Ingles del estudiante a ingresar: ")
                     if (validate_grade_input(grade) == False):
                         print("Digite una nota del 0 al 100.")
                     else:
                         break
             case 3:
                 while(True):
-                    grade = float(input("Digite la nota de Estudios Sociales del estudiante a ingresar: "))
+                    grade = input("Digite la nota de Estudios Sociales del estudiante a ingresar: ")
                     if (validate_grade_input(grade) == False):
                         print("Digite una nota del 0 al 100.")
                     else:
                         break
             case 4:
                 while(True):
-                    grade = float(input("Digite la nota de Ciencias del estudiante a ingresar: "))
+                    grade = input("Digite la nota de Ciencias del estudiante a ingresar: ")
                     if (validate_grade_input(grade) == False):
                         print("Digite una nota del 0 al 100.")
                     else:
                         break
-        return grade
+        return float(grade)
     except Exception as ex:
         print(ex)
 
