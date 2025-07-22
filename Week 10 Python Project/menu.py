@@ -28,12 +28,13 @@ def execute_option_from_menu():
             match option:
                 case 1:
                     while(True):
-                        actions.add_students_to_list(student_list)
-                        add_anoter_student = input("Desea ingresar un nuevo estudiante? Y = Si, N = No: ")
-                        if (add_anoter_student != "Y" and add_anoter_student != "N"):
-                            raise ValueError ("Digite una opcion valida (Y/N)")
-                        if (add_anoter_student == "N"):
-                            break
+                        actions.add_students_to_list(student_list)                        
+                        while(True):
+                            add_anoter_student = input("Desea ingresar un nuevo estudiante? Y = Si, N = No: ")
+                            if (add_anoter_student != "Y" and add_anoter_student != "N"):
+                                print("Digite una opcion valida (Y/N)")
+                            if (add_anoter_student == "N"):
+                                break
                 case 2:
                     actions.see_students_list(student_list)
                 case 3:
