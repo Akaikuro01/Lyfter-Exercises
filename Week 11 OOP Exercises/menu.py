@@ -33,10 +33,13 @@ def execute_option_from_menu():
                             add_anoter_student = input("Desea ingresar un nuevo estudiante? Y = Si, N = No: ")
                             if (add_anoter_student != "Y" and add_anoter_student != "N"):
                                 print("Digite una opcion valida (Y/N)")
-                            if (add_anoter_student == "N"):
+                            elif (add_anoter_student == "Y" or add_anoter_student == "N"):
                                 break
+                        if add_anoter_student == "N":
+                            break
+                        
                 case 2:
-                    actions.see_students_list(student_list)
+                    actions.see_students_object(student_list)
                 case 3:
                     avg_grade_students_list = actions.calculate_avg_grade_students(student_list)
                     top_3_students_list = actions.calculate_avg_top_3_students(avg_grade_students_list)
@@ -45,7 +48,7 @@ def execute_option_from_menu():
                     avg_grade_students_list = actions.calculate_avg_grade_students(student_list)
                     print(f"El promedio del total de todos los promedios de los alumnos es de: {actions.calculate_avg_all_students(avg_grade_students_list)}")
                 case 5:                    
-                    data.export_data_student_CSV("Estudiantes.csv", student_list, student_list[0].keys())
+                    data.export_data_student_CSV("Estudiantes.csv", student_list)
                     print("Datos fueron exportados.")
                 case 6:
                     student_list = data.import_CSV_into_list("Estudiantes.csv")
