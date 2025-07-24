@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 
-class BankAccount():
+class BankAccount(ABC):
     def __init__(self, balance):
         self.balance = balance
     
@@ -9,7 +9,7 @@ class BankAccount():
 
     @abstractmethod
     def withdraw_money(self, amount):
-        self.balance -= amount
+        pass
 
 
 class SavingsAccount(BankAccount):
@@ -22,7 +22,6 @@ class SavingsAccount(BankAccount):
             print("You have exceeded your minimum balance.")
         else:
             self.balance -= amount
-
 
 savings_Account = SavingsAccount(200, 100)
 savings_Account.withdraw_money(150)
