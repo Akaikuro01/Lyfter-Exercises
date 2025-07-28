@@ -8,7 +8,7 @@ class BankAccount(ABC):
         self.balance += amount
 
     @abstractmethod
-    def withdraw_money(self, amount):
+    def withdraw_money(self,amount):
         pass
 
 
