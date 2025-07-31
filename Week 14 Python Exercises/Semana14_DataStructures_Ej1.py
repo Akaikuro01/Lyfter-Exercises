@@ -20,15 +20,19 @@ class Stack(LinkedList):
 
 
 	def pop(self):
-		self.head = self.head.next
+		if self.head is not None:
+			self.head = self.head.next
+		else:
+			print("No elements left in the queue")
 
 
 	def print_structure(self):
-		current_node = self.head					
-		print(current_node.data)
-		while(current_node.next is not None):
-			current_node = current_node.next
+		current_node = self.head
+		if(current_node is not None):					
 			print(current_node.data)
+			while(current_node.next is not None):
+				current_node = current_node.next
+				print(current_node.data)
 
 
 
@@ -47,17 +51,33 @@ my_stack.push(forth)
 
 my_stack.print_structure()
 
+print("-----------------------")
 print("pop")
-
+print("-----------------------")
 my_stack.pop()
 my_stack.print_structure()
-
+print("-----------------------")
 print("pop")
-
+print("-----------------------")
 my_stack.pop()
 my_stack.print_structure()
-
+print("-----------------------")
 print("pop")
-
+print("-----------------------")
+my_stack.pop()
+my_stack.print_structure()
+print("-----------------------")
+print("pop")
+print("-----------------------")
+my_stack.pop()
+my_stack.print_structure()
+print("-----------------------")
+print("pop")
+print("-----------------------")
+my_stack.pop()
+my_stack.print_structure()
+print("-----------------------")
+print("pop")
+print("-----------------------")
 my_stack.pop()
 my_stack.print_structure()

@@ -30,21 +30,36 @@ class Deque(LinkedList):
 
 
 	def pop_left(self):
-		self.head = self.head.next
-		self.head.prev = None
+		if(self.head is None):
+			print("No elements left in the queue")
+		elif (self.head.next is None):
+			self.head = None
+			self.tail = None
+		else:	
+			self.head = self.head.next
+			self.head.prev = None
+			
 	
 
 	def pop_right(self):
-		self.tail = self.tail.prev
-		self.tail.next = None
+		if (self.tail is None):
+			print("No elements left in the queue")
+		elif (self.tail.prev is None):
+			self.tail = None
+			self.head = None		
+		else:
+			self.tail = self.tail.prev
+			self.tail.next = None	
+			
 
 
 	def print_structure(self):
-		current_node = self.head					
-		print(current_node.data)
-		while(current_node.next is not None):
-			current_node = current_node.next
+		current_node = self.head
+		if (current_node is not None):					
 			print(current_node.data)
+			while(current_node.next is not None):
+				current_node = current_node.next
+				print(current_node.data)
 
 
 
@@ -82,6 +97,31 @@ my_deque.print_structure()
 print("-----------------------")
 
 my_deque.pop_right()
+print("--Popped right--")
+my_deque.print_structure()
+print("-----------------------")
+
+my_deque.pop_right()
+print("--Popped right--")
+my_deque.print_structure()
+print("-----------------------")
+
+my_deque.pop_left()
+print("--Popped right--")
+my_deque.print_structure()
+print("-----------------------")
+
+my_deque.pop_left()
+print("--Popped right--")
+my_deque.print_structure()
+print("-----------------------")
+
+my_deque.pop_left()
+print("--Popped right--")
+my_deque.print_structure()
+print("-----------------------")
+
+my_deque.pop_left()
 print("--Popped right--")
 my_deque.print_structure()
 print("-----------------------")
