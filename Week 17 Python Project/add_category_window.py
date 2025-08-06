@@ -23,8 +23,10 @@ def open_add_category_window(all_categories):
             if event == sg.WIN_CLOSED:
                 break
             elif event == "Add":
-                if (values["category"] == "" and values["color_input"] == ""):
+                if (values["category"] == "" or values["color_input"] == ""):
                     sg.popup("Please type a category and a color to add.")
+                elif (values["category"].isspace() or values["color_input"].isspace()):
+                    sg.popup("Please enter a valid value. Input cannot be only blank spaces.")
                 else:
                     category = values["category"]
                     color = values["color_input"]

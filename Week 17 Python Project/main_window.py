@@ -18,30 +18,43 @@ def main():
         rows_colored = app.color_rows(all_entries, all_categories)
         # Define the layout
         main_window_layout = [
-            [sg.Text("Start Date:"), 
-            sg.Input(key="start_date", size=(20, None)),
-            sg.Text("End Date:"),
-            sg.Input(key="end_date", size=(20, None)),
-            sg.Column([[sg.Button("Filter")], [sg.Button("Reset")]])], 
-            [sg.Table(
-                values=all_entries,
-                headings=headers,
-                auto_size_columns=True,
-                display_row_numbers=False,
-                justification="center",
-                num_rows=5,
-                key="finances_table",
-                enable_events=True
-            ), 
-            sg.Column([
-                [sg.Button("Add Category")],
-                [sg.Button("Add Revenue")],
-                [sg.Button("Add Expense")]
-            ])
+            [
+                sg.Column([
+                    [sg.Text("Start Date:")],
+                    [sg.Input(key="start_date", size=(20, None))],
+                    [sg.CalendarButton("Choose Start Date", target="start_date", format="%d-%m-%Y", key="start_date_calendar")]
+                ]),
+                sg.Column([
+                    [sg.Text("End Date:")],
+                    [sg.Input(key="end_date", size=(20, None))],
+                    [sg.CalendarButton("Choose End Date", target="end_date", format="%d-%m-%Y", key="end_date_calendar")]
+                ]),
+                sg.Column([
+                    [sg.Button("Filter")],
+                    [sg.Button("Reset")]
+                ])
+            ],
+            [
+                sg.Table(
+                    values=all_entries,
+                    headings=headers,
+                    auto_size_columns=True,
+                    display_row_numbers=False,
+                    justification="center",
+                    num_rows=5,
+                    key="finances_table",
+                    enable_events=True
+                ),
+                sg.Column([
+                    [sg.Button("Add Category")],
+                    [sg.Button("Add Revenue")],
+                    [sg.Button("Add Expense")]
+                ])
             ],
             [sg.Text(f"Balance: {balance}", key="balance_text")],
             [sg.Button("Exit"), sg.Button("Export to CSV")]
         ]
+
 
         window = sg.Window("Finances", main_window_layout, finalize=True)
         # Here I color the rows in the table.

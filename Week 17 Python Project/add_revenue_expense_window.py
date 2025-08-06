@@ -49,6 +49,12 @@ def open_add_revenue_expense_window(all_entries, all_categories, subject):
                     sg.popup("Invalid amount entered.")
                 elif datetime.strptime(values["date"], "%d-%m-%Y").date() > datetime.now().date():
                     sg.popup("Cannot enter a future date.")
+                    # If the amount entered is negative, I need to show them an error.
+                elif float(values["amount"]) < 0:
+                    sg.popup("Cannot enter negative numbers.")
+                # If they enter only blank spaces, I also cannot allow them to enter the values.
+                elif (values["title"].isspace() or values["category"].isspace() or values["amount"].isspace() or values["date"].isspace()):
+                    sg.popup("Please enter a valid value. Input cannot be only blank spaces.")
                 else:
                     #If subject is True then it is a revenue so I call revenue logic, otherwise, do the same for Expense.
                     if subject:
