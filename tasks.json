@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "title": "Wash the dishes",
+        "description": "Wash the dishes left in the sink",
+        "status": "Pending"
+    },
+    {
+        "id": 2,
+        "title": "Make the bed",
+        "description": "Make the bed in the morning!",
+        "status": "Completed"
+    },
+    {
+        "id": 2,
+        "title": "Study",
+        "description": "Study how to become a pro developer",
+        "status": "Done"
+    }
+]
