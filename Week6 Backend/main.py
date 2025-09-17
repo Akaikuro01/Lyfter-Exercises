@@ -1,5 +1,7 @@
 import Metadata
-import Repositories
+import Repositories.AddressRepo as addresses_repo
+import Repositories.UsersRepo as users_repo
+import Repositories.VehicleRepo as vehicles_repo
 
 
 
@@ -9,9 +11,9 @@ if __name__ == "__main__":
     vehicles = Metadata.vehicle_table
     engine = Metadata.engine
 
-    user_repo = Repositories.UsersRepository(engine, users)
-    address_repo = Repositories.AddressRepository(engine, addresses)
-    vehicles_repo = Repositories.VehicleRepository(engine, vehicles)
+    user_repo = users_repo.UsersRepository(engine, users)
+    address_repo = addresses_repo.AddressRepository(engine, addresses)
+    vehicles_repo = vehicles_repo.VehicleRepository(engine, vehicles)
 
     # Insert values
     user_repo.insert_user("Steven", "stv@hotmail.com")
