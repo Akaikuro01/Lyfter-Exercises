@@ -9,10 +9,8 @@ def check_auth(token, rights_scope, ioc_container):
         decoded = ioc_container.jwt_manager.decode(token)
         if not decoded:
             return 1
-        user_id = decoded['id']
-
-        user = ioc_container.users_repository.get_user_by_id(user_id)
-        role = user[3]
+        
+        role = decoded['role']
 
         if role not in rights_scope:
             return 2

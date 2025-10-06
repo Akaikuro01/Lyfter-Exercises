@@ -19,8 +19,9 @@ def register():
     else:
         result = ioc_container.users_repository.insert_user(data.get('username'), data.get('password'), data.get('role_id'))
         user_id = result[0]
+        role = result[3]
 
-        token = ioc_container.jwt_manager.encode({'id':user_id})
+        token = ioc_container.jwt_manager.encode({'id':user_id, 'role': role})
         
         return jsonify(token=token)
 
@@ -36,7 +37,8 @@ def login():
             return Response(status=403)
         else:
             user_id = result[0]
-            token = ioc_container.jwt_manager.encode({'id':user_id})
+            role = result[3]
+            token = ioc_container.jwt_manager.encode({'id':user_id, 'role': role})
         
             return jsonify(token=token)
 
