@@ -8,7 +8,7 @@ from Repositories.cart_repository import CartRepository
 from Repositories.Payment_methods_repository import PaymentMethodsRepository
 from cache_manager import CacheManager
 
-class IocContainter():
+class IocContainer():
     def __init__(self):
         self.db_context = db_context
         self.jwt_manager = JWT_Manager(
