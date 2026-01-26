@@ -1,0 +1,112 @@
+html, body {
+    background-color: #EDEBEB;
+}
+
+.tablecontainer {
+    display: flex;
+    flex-direction: column;
+    width: 50%;   /* centers the whole block */
+    padding: 25px 0;
+    margin-left: 25%;
+    align-items: stretch; /* children can take full width */
+}
+
+
+.tablecontainer h1 {
+    margin: 0 0 16px 0;
+}
+
+.whitestripe {
+    width: 50%;
+    height: 20px;
+    background-color: white;
+    margin-top: 20px;
+    margin-left: 30px;
+}
+
+.titlecontainer {
+    display: flex;
+    align-items: start;
+    justify-content: left;
+    text-align: center;
+    border: 5px;
+}
+
+img {
+    width: 45%;
+}
+
+.head {
+    background-color: #1A48C4;
+    color: white;
+}
+
+.column {
+    text-align: center;
+}
+
+.tg {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tg th,
+.tg td {
+  border: 1px solid #d6d6d6; /* your line color */
+}
+
+.entry {
+    display: flex;
+}
+
+.entry img {
+    width: 120px;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+}
+
+
+.rank {
+    width: 70px;        
+    text-align: center;
+    font-weight: 700;
+    font-size: 24px;
+    color: white;
+    background-color: #101119;
+    display: flex;
+    align-items: center;      /* vertical centering */
+    justify-content: center; 
+}
+
+.info {
+    font-weight: 700;
+    font-size: 18px;
+    padding-left: 20px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.graybackground {
+    background-color: #EDEBEB;
+}
+
+.whitebackground {
+    background-color: white;
+}
+
+.plussigncontainer {
+    display: flex;
+    margin-left: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.plussign {
+    width: 30px;
+    height: 30px;
+    margin-right: 30px;
+    color: gray;
+    font-weight: 700;
+}

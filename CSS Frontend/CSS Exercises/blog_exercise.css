@@ -1,0 +1,116 @@
+.maindiv {
+    display: flex;
+    padding: 25px 0;
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+    border: 5px;
+}
+
+.secondcontainer {
+    justify-items: center;
+    width: 60%;
+}
+
+.bycontainer {
+    text-align: center;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    margin-top: 20px;
+}
+
+.socialscontainer {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.smallp {
+    font-size: 0.8rem;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+body {
+    justify-items: center;
+    background-color: #fffdf9;
+}
+
+h1 {
+    font-size: 62px;
+    line-height: 66px;
+    letter-spacing: 1px;
+    text-align: center;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 24px;
+    line-height: 30px;
+    text-align: center;
+    margin: 20px 0 0 0;
+    font-weight: 400;
+}
+
+.socialsimg {
+    width: 75%;
+}
+
+.blogimg {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.quicknotecontainer {
+    background-color: #f7f5f2;
+    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+}
+
+.articlecontainer {
+    margin-right: 30px;
+    margin-left: 30px;
+}
+
+p {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+}
+
+.addmaincontainer {
+    gap: 24px;
+    align-items: start;
+    max-width: 900px;
+    margin: 0 auto;  
+} 
+
+
+
+.addcontainer {
+    background: #f7b867;
+    padding: 28px;
+    border-radius: 10px;
+    text-align: center;      
+    float: right;
+    width: 40%;
+    margin-left: 10px;
+}
+
+
+.btn {
+    display: inline-block;
+    background: #222;
+    color: white;
+    text-decoration: none;
+    padding: 14px 22px;
+    border-radius: 8px;
+    font-weight: 600;
+}
