@@ -1,0 +1,21 @@
+<div id="container">
+    <input type="text" id = "myInput">
+    <button type="button" id = "catchButton">Catch data</button>
+    <p id = "inputText"></p>
+</div>
+
+<script>
+    const catchButton = document.getElementById('catchButton');
+    const textInput = document.getElementById("inputText")
+
+    const showInput = () => {   
+        const inputElement = document.getElementById("myInput");
+        const inputValue = inputElement.value;
+
+        textInput.textContent = inputElement.value;
+        inputElement.value = "";
+    }
+
+    catchButton.addEventListener('click', showInput);
+
+</script>
