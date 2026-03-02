@@ -1,0 +1,22 @@
+<button type="button" id="color-button">Colorize</button>
+<p id="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+    dolore magna
+    aliqua</p>
+
+<script>
+    const colorsList = ["red", "blue", "green", "yellow", "cyan", "pink"];
+    const button = document.getElementById('color-button');
+
+    function randomColor() {
+        return colorsList[Math.floor(Math.random() * colorsList.length)];
+    }
+
+    const changeColor = () => {
+        const paragraph = document.getElementById("lorem");
+        const color = randomColor();
+
+        paragraph.style.backgroundColor = color;
+    }
+
+    button.addEventListener('click', changeColor);
+</script>
