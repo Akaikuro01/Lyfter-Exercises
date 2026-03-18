@@ -1,0 +1,31 @@
+<div>
+  <button id='add-button'>Add item</button>
+  <button id='remove-button'>Remove items</button>
+  <ul id="myList">
+    <li id='list'>An item</li>
+  </ul>
+</div>
+
+<script>
+  const addButton = document.getElementById('add-button')
+  const deleteButton = document.getElementById('remove-button')
+
+  const addItem = () => {
+    const myList = document.getElementById('myList');
+    const newItem = document.createElement("li");
+    newItem.textContent = "New Item"
+
+    myList.appendChild(newItem);
+  }
+
+  const removeItems = () => {
+    const myList = document.getElementById('myList');
+    while (myList.firstChild) {
+      myList.removeChild(myList.firstChild);
+    }
+
+  }
+
+  addButton.addEventListener('click', addItem)
+  deleteButton.addEventListener('click', removeItems)
+</script>
